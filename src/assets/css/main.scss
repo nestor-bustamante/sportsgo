@@ -393,6 +393,9 @@ a {
       > li {
         background: none;
         margin: 0;
+        &:first-child {
+          padding-right: 0;
+        }
       }
     }
     &.thumbs {
