@@ -1,0 +1,9 @@
+.row-grid-live {
+  display: grid;
+  grid-template: 100% / 58.33333% 41.66667%;
+  margin-bottom: calc(var(--size-base) * 2);
+}
+.main-video {
+  height: 100%;
+  padding: 0;
+}
