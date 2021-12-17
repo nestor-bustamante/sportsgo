@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from "react-router-dom";
 import './Login.scss';
 import Footer from '../../components/Footer/Footer';
 import logo from '../../assets/img/sportsgo-logo-alt.svg';
@@ -32,7 +33,12 @@ const Login = () => (
                 </fieldset>
                 
                 <fieldset>
-                  <a href="#;" className="special-link">¿Olvidó su contraseña?</a>
+                  <NavLink
+                    to="/forgetpass"
+                    className="special-link"
+                  >
+                    ¿Olvidó su contraseña?
+                  </NavLink>
                 </fieldset>
                
                 {/* 

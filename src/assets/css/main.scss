@@ -18,7 +18,10 @@
   --sportsgo-white: #fff;
   --sportsgo-color: #2d2f3d;
   --sportsgo-error: #f33;
+  --sportsgo-warning: #ffb533;
+  --sportsgo-success: #20c628;
   --sportsgo-disabled: #ccc;
+
 
   // base
   --size-base: 1.6rem;
@@ -585,6 +588,25 @@ footer {
         }
       }
     }
+  }
+}
+
+.message {
+  padding: calc(var(--size-base) * 2);
+  margin: var(--size-base) 0;
+  @include borderRadius( calc(var(--size-base) * .25));
+  border: .1rem solid var(--sportsgo-color);
+  &.error {
+    color: var(--sportsgo-error);
+    border-color: var(--sportsgo-error);
+  }
+  &.warning {
+    color: var(--sportsgo-warning);
+    border-color: var(--sportsgo-warning);
+  }
+  &.success {
+    color: var(--sportsgo-success);
+    border-color: var(--sportsgo-success);
   }
 }
 
