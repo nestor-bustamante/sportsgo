@@ -1,0 +1,29 @@
+@keyframes slider-on {
+  0% {
+    width: calc(var(--size-base) * 1.5);
+    transform: translate3d(.4rem, .4rem, 0);
+  }
+  70% {
+    width: calc(var(--size-base) * 2.1);
+    transform: translate3d(1.2rem, .4rem, 0);
+  }
+  100% {
+    width: calc(var(--size-base) * 1.5);
+    transform: translate3d(2rem, .4rem, 0);
+  }
+}
+
+@keyframes slider-off {
+  0% {
+    width: calc(var(--size-base) * 1.5);
+    transform: translate3d(2rem, .4rem, 0);
+  }
+  70% {
+    width: calc(var(--size-base) * 2.1);
+    transform: translate3d(1.2rem, .4rem, 0);
+  }
+  100% {
+    width: calc(var(--size-base) * 1.5);
+    transform: translate3d(.4rem, .4rem, 0);
+  }
+}

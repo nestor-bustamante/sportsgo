@@ -1,6 +1,7 @@
 @import 'fonts';
 @import 'vars';
 @import 'mixins';
+@import 'keyframes';
 
 :root {
   // color primary HSL
@@ -97,16 +98,6 @@ nav {
       &:last-child {
         margin: 0;
       }
-      &.selected {
-        a {
-          -webkit-box-shadow:inset 0 .3rem 0 0 var(--sportsgo-yellow);
-          box-shadow:inset 0 .3rem 0 0 var(--sportsgo-yellow);
-          opacity: 1;
-          &:hover {
-            opacity: 1;
-          }
-        }
-      }
       a {
         height: calc(var(--size-base) * 4.25);
         @extend .align-center;
@@ -118,6 +109,14 @@ nav {
         @include transition(200ms);
         &:hover {
           opacity: .9;
+        }
+        &.active {
+          -webkit-box-shadow:inset 0 .3rem 0 0 var(--sportsgo-yellow);
+          box-shadow:inset 0 .3rem 0 0 var(--sportsgo-yellow);
+          opacity: 1;
+          &:hover {
+            opacity: 1;
+          }
         }
       }
     }
@@ -137,6 +136,8 @@ button {
     background-color: var(--sportsgo-yellow);
     height: calc(var(--size-base) * 2.625);
     padding: 0 calc(var(--size-base) * 2.625);
+    opacity: 1 !important;
+    color: var(--sportsgo-deepblue) !important;
     &:hover {
       background-color: var(--sportsgo-yellow-darken);
     }
@@ -188,6 +189,19 @@ button {
 
 button,
 a {
+  &.primary {
+    background-color: var(--sportsgo-yellow);
+    height: calc(var(--size-base) * 2.625);
+    line-height: calc(var(--size-base) * 2.625);
+    padding: 0 calc(var(--size-base) * 2.625);
+    opacity: 1 !important;
+    color: var(--sportsgo-deepblue) !important;
+    @include borderRadius( calc(var(--size-base) * .25));
+    @include transition(200ms);
+    &:hover {
+      background-color: var(--sportsgo-yellow-darken);
+    }
+  }
   &.secondary {
     background: none;
     display: inline-block;
@@ -408,6 +422,108 @@ a {
   padding: 0 calc(var(--size-base) * 2.625);
 }
 
+form {
+  fieldset {
+    margin: 0 0 calc(var(--size-base) * 2) 0;
+    border: none;
+    padding: 0;
+    label {
+      display: block;
+      legend {
+        color: var(--sportsgo-white);
+        display: block;
+        margin: 0 0 calc(var(--size-base) * .4) 0;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+input,
+select,
+textarea {
+  background: none;
+  border: .1rem solid rgba(255,255,255,.4);
+  height: calc(var(--size-base) * 2.625);
+  box-sizing: border-box;
+  padding: calc(var(--size-base) * .5) var(--size-base);
+  @include borderRadius( calc(var(--size-base) * .25));
+  color: var(--sportsgo-white);
+  font-family: var(--font-family);
+  font-size: var(--size-base);
+  width: 100%;
+  appearance: none;
+  &::placeholder {
+    opacity: .5;
+  }
+}
+
+textarea {
+  padding: calc(var(--size-base) * .5) var(--size-base);
+  resize: none;
+  height: auto;
+}
+
+select {
+  background: url('../img/selector.svg') no-repeat calc(100% - var(--size-base)) 50%;
+  background-size: calc(var(--size-base) * .75);
+  cursor: pointer; 
+}
+
+.switch {
+  display: inline-block;
+  fieldset {
+    label {
+      display: flex;
+      align-items: center;
+      position: relative;
+      legend {
+        margin: 0;
+      }
+      input {
+        width: 0;
+        height: 0;
+        visibility: hidden;
+      }
+      .slider {
+        position: relative;
+        height: calc(var(--size-base) * 2);
+        width: calc(var(--size-base) * 3);
+        background: rgba(255,255,255,.3);
+        border-radius: var(--size-base);
+        @include transition(200ms);
+        cursor: pointer;
+        &:before {
+          content: '';
+          width: calc(var(--size-base) * 1.5);
+          height: calc(var(--size-base) * 1.5);
+          background: var(--sportsgo-white);
+          border-radius: var(--size-base);
+          display: block;
+          box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, .24);
+          animation: slider-off 200ms linear forwards;
+        }
+      }
+      input:checked + .slider {
+        background-color: var(--sportsgo-yellow);
+      }
+      input:checked + .slider:before {
+        animation: slider-on 200ms linear forwards;
+      }
+    }
+  }
+}
+
+.special-link {
+  font-weight: 500;
+  opacity: .5;
+  @include transition(200ms);
+  color: var(--sportsgo-white);
+  &:hover {
+    opacity: 1;
+  }
+}
+
 footer {
   margin-top: calc(var(--size-base) * 2);
   padding: calc(var(--size-base) * 2) calc(var(--size-base) * 2.625);
@@ -463,4 +579,16 @@ footer {
 
 .height-full-percentage {
   height: 100%;
+}
+
+.height-full-vh {
+  height: 100vh;
+}
+
+.margin-center {
+  margin: 0 auto;
+}
+
+.width-full {
+  width: 100%;
 }

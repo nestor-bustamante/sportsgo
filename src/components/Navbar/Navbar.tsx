@@ -1,14 +1,31 @@
+
+import { NavLink } from "react-router-dom";
+
 const Navbar = () => (
+
+
   <nav>
     <ul className="display-flex align-center">
-      <li className="selected">
-        <a href="#;">Inicio</a>
+      <li>
+        <NavLink
+          to="/"
+        >
+          Inicio
+        </NavLink>
       </li>
       <li>
-        <a href="#;">Live</a>
+        <NavLink
+          to="/live"
+        >
+          Live
+        </NavLink>
       </li>
       <li>
-        <a href="#;">VoD</a>
+        <NavLink
+          to="/vod"
+        >
+          VoD
+        </NavLink>
       </li>
     </ul>
   </nav>

@@ -1,16 +1,31 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import { BrowserRouter as Router } from 'react-router-dom';
+
+import './assets/css/main.scss';
+
+import Home from './views/Home/Home';
+import Live from './views/Live/Live';
+import Vod from './views/Vod/Vod';
+import Login from './views/Login/Login';
+import Register from './views/Register/Register';
+
+import { BrowserRouter as Router, Routes, Route  } from 'react-router-dom';
 
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <Router>
     <React.StrictMode>
-      <App />
-      </React.StrictMode>
+      <Fragment>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/live" element={<Live />} />
+          <Route exact path="/vod" element={<Vod />} />
+          <Route exact path="/login" element={<Login />} />
+          <Route exact path="/register" element={<Register />} />
+        </Routes>
+      </Fragment>
+    </React.StrictMode>
   </Router>,
   document.getElementById('root')
 );

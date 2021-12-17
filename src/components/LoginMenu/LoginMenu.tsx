@@ -1,5 +1,7 @@
 
 import search from '../../assets/img/search-icon.svg';
+import { NavLink } from "react-router-dom";
+
 
 const LoginMenu = () => (
   <div className="login-menu">
@@ -10,10 +12,19 @@ const LoginMenu = () => (
         </a>
       </li>
       <li>
-        <button className="primary">Iniciar sesión</button>
+        <NavLink
+          to="/login"
+          className="primary"
+        >
+          Iniciar sesión
+        </NavLink>
       </li>
       <li className="register">
-        <a href="#;">Registrarse</a>
+        <NavLink
+          to="/register"
+        >
+          Registrarse
+        </NavLink>
       </li>
     </ul>
   </div>
