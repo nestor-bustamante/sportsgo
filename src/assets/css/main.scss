@@ -181,6 +181,7 @@ button {
         margin: 0;
       }
       &.search {
+        margin-left: var(--size-base);
         a {
           display: block;
           height: calc(var(--size-base) * 2.625);
@@ -191,6 +192,23 @@ button {
           }
         }
       }
+    }
+  }
+}
+
+.user-menu {
+  display: flex;
+  height: calc(var(--size-base) * 2.625);
+  color: var(--sportsgo-white);
+  font-size: calc(var(--size-base) * .9);
+  @extend .align-center;
+  em {
+    width: var(--size-base);
+    height: var(--size-base);
+    margin-right: calc(var(--size-base) * .5);
+    img {
+      width: 100%;
+      height: auto;
     }
   }
 }
