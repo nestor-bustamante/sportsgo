@@ -17,6 +17,8 @@
   --sportsgo-deepblue: #000423;
   --sportsgo-white: #fff;
   --sportsgo-color: #2d2f3d;
+  --sportsgo-error: #f33;
+  --sportsgo-disabled: #ccc;
 
   // base
   --size-base: 1.6rem;
@@ -141,6 +143,13 @@ button {
     &:hover {
       background-color: var(--sportsgo-yellow-darken);
     }
+    &:disabled {
+      opacity: .5 !important;
+      background-color: var(--sportsgo-disabled);
+      &:hover {
+        background-color: var(--sportsgo-disabled);
+      }
+    }
   }
 }
 
@@ -201,6 +210,13 @@ a {
     &:hover {
       background-color: var(--sportsgo-yellow-darken);
     }
+    &:disabled {
+      opacity: .5 !important;
+      background-color: var(--sportsgo-disabled);
+      &:hover {
+        background-color: var(--sportsgo-disabled);
+      }
+    }
   }
   &.secondary {
     background: none;
@@ -218,6 +234,13 @@ a {
     &:hover {
       border-color: var(--sportsgo-yellow-darken);
       color: var(--sportsgo-yellow-darken);
+    }
+    &:disabled {
+      opacity: .5 !important;
+      border-color: var(--sportsgo-disabled);
+      &:hover {
+        border-color: var(--sportsgo-disabled);
+      }
     }
   }
 }
@@ -455,6 +478,12 @@ textarea {
   appearance: none;
   &::placeholder {
     opacity: .5;
+  }
+  &.error {
+    border-color: var(--sportsgo-error);
+  }
+  &:disabled {
+    opacity: .8;
   }
 }
 
