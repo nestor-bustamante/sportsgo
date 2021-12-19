@@ -14,6 +14,7 @@ import Video from './views/Video/Video';
 import { BrowserRouter as Router, Routes, Route  } from 'react-router-dom';
 
 import reportWebVitals from './reportWebVitals';
+// import * as serviceWorkers from './serviceWorker';
 
 ReactDOM.render(
   <Router>
