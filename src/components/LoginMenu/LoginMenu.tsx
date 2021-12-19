@@ -6,7 +6,8 @@ import { NavLink } from "react-router-dom";
 const LoginMenu = () => {
 
   const [showSearch, setShowSeacrh] = useState(false);
-  const searchInput = () => {
+  const searchInput = (ev: any) => {
+    ev.preventDefault();
     setShowSeacrh(!showSearch); return false;
   };
   
