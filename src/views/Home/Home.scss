@@ -7,3 +7,13 @@
   height: 100%;
   padding: 0;
 }
+
+@media (max-width: 1094px) {
+  .row-grid-live {
+    display: block !important;
+  }
+  .main-video {
+    padding-top: 56.25%;
+    margin-bottom: var(--size-base);
+  }
+}

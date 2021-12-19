@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import search from '../../assets/img/search-icon.svg';
 import { NavLink } from "react-router-dom";
-import UserMenu from '../UserMenu/UserMenu';
+// import UserMenu from '../UserMenu/UserMenu';
 
 const LoginMenu = () => {
 

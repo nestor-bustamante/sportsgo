@@ -9,6 +9,7 @@ import Vod from './views/Vod/Vod';
 import Login from './views/Login/Login';
 import Register from './views/Register/Register';
 import ForgetPass from './views/ForgetPass/ForgetPass';
+import Video from './views/Video/Video';
 
 import { BrowserRouter as Router, Routes, Route  } from 'react-router-dom';
 
@@ -25,6 +26,7 @@ ReactDOM.render(
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/forgetpass" element={<ForgetPass />} />
+          <Route exact path="/video" element={<Video />} />
         </Routes>
       </Fragment>
     </React.StrictMode>

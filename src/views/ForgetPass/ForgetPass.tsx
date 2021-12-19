@@ -42,7 +42,7 @@ const ForgetPass = () => (
           </div>
         </div>
 
-        <div className="col col-6 display-flex align-center">
+        <div className="col col-6 display-flex align-center resp-none">
           <div className="logo-center">
             <img src={logo} alt="sportsgo.tv" />
           </div>

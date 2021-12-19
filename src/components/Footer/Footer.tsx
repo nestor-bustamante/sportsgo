@@ -13,7 +13,7 @@ const Footer = () => (
           </NavLink>
         </div>
       </div>
-      <div className="col col-6 justify-end">
+      <div className="col col-6 justify-end resp-none">
         <Navbar />
       </div>
     </div>

@@ -81,6 +81,7 @@ body {
 header {
   height: calc(var(--size-base) * 4.25);
   .brand {
+    margin: var(--size-base) 0;
     height: calc(var(--size-base) * 2);
     a,
     img {
@@ -137,6 +138,7 @@ button {
   font-family: var(--font-family);
   @include borderRadius( calc(var(--size-base) * .25));
   @include transition(200ms);
+  white-space: nowrap;
   &.primary {
     background-color: var(--sportsgo-yellow);
     height: calc(var(--size-base) * 2.625);
@@ -219,6 +221,7 @@ button {
 
 button,
 a {
+  white-space: nowrap;
   &.primary {
     background-color: var(--sportsgo-yellow);
     height: calc(var(--size-base) * 2.625);
@@ -374,7 +377,6 @@ a {
     width: 100%;
     top: 0;
     left: 0;
-    background-color: var(--sportsgo-yellow);
     &:hover {
       .thumbnail {
         img {
@@ -393,7 +395,7 @@ a {
       .title {
         color: var(--sportsgo-white);
         font-weight: 800;
-        font-size: calc(var(--size-base) * 3.5);
+        font-size: calc(var(--size-base) * 2.5);
         margin-bottom: calc(var(--size-base) * 2);
         line-height: 110%;
       }
@@ -628,6 +630,94 @@ footer {
   }
 }
 
+.resp-menu {
+  display: none;
+  position: absolute;
+  z-index: 100;
+  top: calc(var(--size-base) * 4);
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  overflow-y: auto;
+  background-color: var(--sportsgo-deepblue);
+  padding: 0 var(--size-base);
+  @include transition(200ms);
+  &.active {
+    bottom: 0;
+  }
+  nav {
+    ul {
+      display: block;
+      height: auto;
+      margin: 0;
+      > li {
+        margin: 0;
+      }
+    }
+  }
+  .login-menu {
+    ul {
+      display: block;
+      li {
+        &.search {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.resp-show {
+  display: none;
+}
+
+.burger {
+  position: absolute;
+  width: calc(var(--size-base) * 2);
+  height: calc(var(--size-base) * 2);
+  right: var(--size-base);
+  top: var(--size-base);
+  cursor: pointer;
+  @include transition(200ms);
+  &.active {
+    span {
+      height: 0;
+    }
+    &:after {
+      @include rotate(45deg);
+      top: 46%;
+    }
+    &:before {
+      @include rotate(-45deg);
+      bottom: 45%;
+    }
+
+  }
+  span {
+    position: absolute;
+    width: calc(var(--size-base) * 1.5);
+    height: calc(var(--size-base) * .188);
+    left: calc(var(--size-base) * .25);
+    background: var(--sportsgo-yellow);
+    top: calc(50% - (0.188rem / 2));
+  }
+  &:after, 
+  &:before {
+    content: "";
+    position: absolute;
+    width: calc(var(--size-base) * 1.5);
+    height: calc(var(--size-base) * .188);
+    left: calc(var(--size-base) * .25);
+    background: var(--sportsgo-yellow);
+    @include transition(200ms);
+  }
+  &:after {
+    top: 25%;
+  }
+  &:before {
+    bottom: 23%;
+  }
+}
 // helpers
 
 .display-flex {
@@ -646,12 +736,17 @@ footer {
   margin-top: var(--size-base);
 }
 
+.margin-bottom {
+  margin-bottom: var(--size-base);
+}
+
 .height-full-percentage {
   height: 100%;
 }
 
 .height-full-vh {
   height: 100vh;
+  overflow-y: auto;
 }
 
 .margin-center {
@@ -661,3 +756,124 @@ footer {
 .width-full {
   width: 100%;
 }
+
+
+
+@media (max-width: 1440px) {
+  
+  .video {
+    .content-video {
+      .info-video {
+        .title {
+          font-size: calc(var(--size-base) * 2);
+          margin-bottom: var(--size-base);
+        }
+      }
+    }
+  }
+  
+  .video .content-video .info-video .data-video,
+  .video .content-video .info-video .data-video > li ul,
+  .data-video > li .video .content-video .info-video ul {
+    margin: var(--size-base) 0 0 0;
+  }
+
+  .data-video {
+    display: block;
+  }
+
+  .data-video > li {
+    margin: calc(var(--size-base) * .5) 0;
+    margin-right: calc(var(--size-base) * .5);
+  }
+
+  .data-video > li ul {
+    display: flex;
+  }
+
+}
+
+@media (max-width: 1094px) {
+
+
+  .card .card-thumbnail .card-thumb-title > div {
+    font-size: calc(var(--size-base) * 1.5);
+  }
+
+  .data-video > li {
+    display: inline-flex;
+    order: 1;
+  }
+
+  header .brand a {
+    overflow: hidden;
+    width: 69px;
+  }
+
+  .login-menu ul li {
+    margin-left: var(--size-base);
+  }
+
+}
+
+@media (max-width: 920px) {
+
+  .resp-show {
+    display: block;
+  }
+
+  .resp-none {
+    display: none;
+  }
+
+  .resp-menu {
+    display: block;
+  }
+
+  .sportsgo-wrapper {
+    padding: 0 var(--size-base);
+  }
+
+  .row {
+    .col {
+      @for $i from 1 through 12 {
+        &.col-#{$i} {
+          -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+        }
+      }
+    }
+  }
+
+  nav ul li a {
+    padding: 0 var(--size-base);
+    height: calc(var(--size-base) * 3);
+  }
+
+  nav ul li a.active {
+    box-shadow: inset 0.3rem 0 0 0 var(--sportsgo-yellow);
+  }
+
+  footer #footer-logo a {
+    overflow: hidden;
+    width: 69px;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .video .content-video .info-video > div {
+    bottom: var(--size-base);
+    left: var(--size-base);
+    right: var(--size-base);
+  }
+  .video .content-video .info-video .title {
+    font-size: calc(var(--size-base) * 1.2);
+  }
+
+  .row-grid-live .data-video{
+    display: none;
+  }
+
+}
+
