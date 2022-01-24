@@ -1,0 +1,1154 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/montserrat-semibolditalic.woff2") format("woff2"), url("../fonts/montserrat-semibolditalic.woff") format("woff"), url("../fonts/montserrat-semibolditalic.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/montserrat-semibold.woff2") format("woff2"), url("../fonts/montserrat-semibold.woff") format("woff"), url("../fonts/montserrat-semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/montserrat-regular.woff2") format("woff2"), url("../fonts/montserrat-regular.woff") format("woff"), url("../fonts/montserrat-regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/montserrat-mediumitalic.woff2") format("woff2"), url("../fonts/montserrat-mediumitalic.woff") format("woff"), url("../fonts/montserrat-mediumitalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/montserrat-medium.woff2") format("woff2"), url("../fonts/montserrat-medium.woff") format("woff"), url("../fonts/montserrat-medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/montserrat-extrabolditalic.woff2") format("woff2"), url("../fonts/montserrat-extrabolditalic.woff") format("woff"), url("../fonts/montserrat-extrabolditalic.ttf") format("truetype");
+  font-weight: 800;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/montserrat-extrabold.woff2") format("woff2"), url("../fonts/montserrat-extrabold.woff") format("woff"), url("../fonts/montserrat-extrabold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/montserrat-bolditalic.woff2") format("woff2"), url("../fonts/montserrat-bolditalic.woff") format("woff"), url("../fonts/montserrat-bolditalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/montserrat-bold.woff2") format("woff2"), url("../fonts/montserrat-bold.woff") format("woff"), url("../fonts/montserrat-bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/montserrat-blackitalic.woff2") format("woff2"), url("../fonts/montserrat-blackitalic.woff") format("woff"), url("../fonts/montserrat-blackitalic.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/montserrat-black.woff2") format("woff2"), url("../fonts/montserrat-black.woff") format("woff"), url("../fonts/montserrat-black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+@keyframes slider-on {
+  0% {
+    width: calc(var(--size-base) * 1.5);
+    transform: translate3d(0.4rem, 0.4rem, 0);
+  }
+  70% {
+    width: calc(var(--size-base) * 2.1);
+    transform: translate3d(1.2rem, 0.4rem, 0);
+  }
+  100% {
+    width: calc(var(--size-base) * 1.5);
+    transform: translate3d(2rem, 0.4rem, 0);
+  }
+}
+@keyframes slider-off {
+  0% {
+    width: calc(var(--size-base) * 1.5);
+    transform: translate3d(2rem, 0.4rem, 0);
+  }
+  70% {
+    width: calc(var(--size-base) * 2.1);
+    transform: translate3d(1.2rem, 0.4rem, 0);
+  }
+  100% {
+    width: calc(var(--size-base) * 1.5);
+    transform: translate3d(0.4rem, 0.4rem, 0);
+  }
+}
+:root {
+  --sportsgo-yellow-h: 50;
+  --sportsgo-yellow-s: 100%;
+  --sportsgo-yellow-l: 59%;
+  --sportsgo-yellow: hsl(var(--sportsgo-yellow-h), var(--sportsgo-yellow-s), var(--sportsgo-yellow-l));
+  --sportsgo-yellow-darken: hsl(var(--sportsgo-yellow-h), var(--sportsgo-yellow-s), calc(var(--sportsgo-yellow-l) - 15%));
+  --sportsgo-deepblue: #000423;
+  --sportsgo-white: #fff;
+  --sportsgo-color: #2d2f3d;
+  --sportsgo-error: #f33;
+  --sportsgo-warning: #ffb533;
+  --sportsgo-success: #20c628;
+  --sportsgo-disabled: #ccc;
+  --size-base: 1.6rem;
+  --font-family: "Montserrat";
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a,
+a:hover,
+:hover,
+:focus {
+  text-decoration: none;
+  outline: 0;
+}
+
+html {
+  font-size: 10px;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-weight: 400;
+  font-size: var(--size-base);
+  font-family: var(--font-family);
+  background-color: var(--sportsgo-deepblue);
+  color: var(--sportsgo-color);
+}
+
+.row {
+  display: flex;
+  margin: 0 calc(var(--size-base) / -2);
+  flex-wrap: wrap;
+}
+.row .col {
+  flex: 1 0;
+  padding: 0 calc(var(--size-base) / 2);
+  width: 100%;
+}
+.row .col.flex-end {
+  align-self: flex-end;
+}
+.row .col.col-1 {
+  -ms-flex: 0 0 8.3333333333%;
+  flex: 0 0 8.3333333333%;
+}
+.row .col.col-2 {
+  -ms-flex: 0 0 16.6666666667%;
+  flex: 0 0 16.6666666667%;
+}
+.row .col.col-3 {
+  -ms-flex: 0 0 25%;
+  flex: 0 0 25%;
+}
+.row .col.col-4 {
+  -ms-flex: 0 0 33.3333333333%;
+  flex: 0 0 33.3333333333%;
+}
+.row .col.col-5 {
+  -ms-flex: 0 0 41.6666666667%;
+  flex: 0 0 41.6666666667%;
+}
+.row .col.col-6 {
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
+}
+.row .col.col-7 {
+  -ms-flex: 0 0 58.3333333333%;
+  flex: 0 0 58.3333333333%;
+}
+.row .col.col-8 {
+  -ms-flex: 0 0 66.6666666667%;
+  flex: 0 0 66.6666666667%;
+}
+.row .col.col-9 {
+  -ms-flex: 0 0 75%;
+  flex: 0 0 75%;
+}
+.row .col.col-10 {
+  -ms-flex: 0 0 83.3333333333%;
+  flex: 0 0 83.3333333333%;
+}
+.row .col.col-11 {
+  -ms-flex: 0 0 91.6666666667%;
+  flex: 0 0 91.6666666667%;
+}
+.row .col.col-12 {
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+}
+
+header {
+  height: calc(var(--size-base) * 4.25);
+}
+header .brand {
+  margin: var(--size-base) 0;
+  height: calc(var(--size-base) * 2);
+}
+header .brand a,
+header .brand img {
+  display: block;
+  height: 100%;
+  width: auto;
+}
+
+nav ul {
+  height: calc(var(--size-base) * 4.25);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-left: calc(var(--size-base) * 5);
+}
+nav ul li {
+  margin-right: calc(var(--size-base) * 2.75);
+}
+nav ul li:last-child {
+  margin: 0;
+}
+nav ul li a {
+  height: calc(var(--size-base) * 4.25);
+  color: var(--sportsgo-white);
+  font-style: italic;
+  font-weight: 500;
+  opacity: 0.5;
+  -webkit-transition: all 200ms linear;
+  -moz-transition: all 200ms linear;
+  -ms-transition: all 200ms linear;
+  -o-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+nav ul li a:hover {
+  opacity: 0.9;
+}
+nav ul li a.active {
+  -webkit-box-shadow: inset 0 0.3rem 0 0 var(--sportsgo-yellow);
+  box-shadow: inset 0 0.3rem 0 0 var(--sportsgo-yellow);
+  opacity: 1;
+}
+nav ul li a.active:hover {
+  opacity: 1;
+}
+
+button {
+  appearance: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: var(--size-base);
+  font-family: var(--font-family);
+  -webkit-border-radius: calc(var(--size-base) * .25);
+  border-radius: calc(var(--size-base) * .25);
+  -webkit-transition: all 200ms linear;
+  -moz-transition: all 200ms linear;
+  -ms-transition: all 200ms linear;
+  -o-transition: all 200ms linear;
+  transition: all 200ms linear;
+  white-space: nowrap;
+}
+button.primary {
+  background-color: var(--sportsgo-yellow);
+  height: calc(var(--size-base) * 2.625);
+  padding: 0 calc(var(--size-base) * 2.625);
+  opacity: 1 !important;
+  color: var(--sportsgo-deepblue) !important;
+}
+button.primary:hover {
+  background-color: var(--sportsgo-yellow-darken);
+}
+button.primary:disabled {
+  opacity: 0.5 !important;
+  background-color: var(--sportsgo-disabled);
+}
+button.primary:disabled:hover {
+  background-color: var(--sportsgo-disabled);
+}
+
+.login-menu {
+  height: calc(var(--size-base) * 2.625);
+}
+.login-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.login-menu ul li {
+  height: calc(var(--size-base) * 2.625);
+  margin-left: calc(var(--size-base) * 2.75);
+}
+.login-menu ul li a {
+  color: var(--sportsgo-white);
+  opacity: 0.5;
+  -webkit-transition: all 200ms linear;
+  -moz-transition: all 200ms linear;
+  -ms-transition: all 200ms linear;
+  -o-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+.login-menu ul li a:hover {
+  opacity: 1;
+}
+.login-menu ul li:first-child {
+  margin: 0;
+}
+.login-menu ul li.search {
+  margin-left: var(--size-base);
+}
+.login-menu ul li.search a {
+  display: block;
+  height: calc(var(--size-base) * 2.625);
+  width: calc(var(--size-base) * 2.625);
+}
+.login-menu ul li.search a img {
+  width: 100%;
+  height: auto;
+}
+
+.user-menu {
+  display: flex;
+  height: calc(var(--size-base) * 2.625);
+  color: var(--sportsgo-white);
+  font-size: calc(var(--size-base) * .9);
+}
+.user-menu em {
+  width: var(--size-base);
+  height: var(--size-base);
+  margin-right: calc(var(--size-base) * .5);
+}
+.user-menu em img {
+  width: 100%;
+  height: auto;
+}
+
+.section-full {
+  height: calc(100vh - calc(var(--size-base) * 4.25));
+}
+
+button,
+a {
+  white-space: nowrap;
+}
+button.primary,
+a.primary {
+  background-color: var(--sportsgo-yellow);
+  height: calc(var(--size-base) * 2.625);
+  line-height: calc(var(--size-base) * 2.625);
+  padding: 0 calc(var(--size-base) * 2.625);
+  opacity: 1 !important;
+  color: var(--sportsgo-deepblue) !important;
+  -webkit-border-radius: calc(var(--size-base) * .25);
+  border-radius: calc(var(--size-base) * .25);
+  -webkit-transition: all 200ms linear;
+  -moz-transition: all 200ms linear;
+  -ms-transition: all 200ms linear;
+  -o-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+button.primary:hover,
+a.primary:hover {
+  background-color: var(--sportsgo-yellow-darken);
+}
+button.primary:disabled,
+a.primary:disabled {
+  opacity: 0.5 !important;
+  background-color: var(--sportsgo-disabled);
+}
+button.primary:disabled:hover,
+a.primary:disabled:hover {
+  background-color: var(--sportsgo-disabled);
+}
+button.secondary,
+a.secondary {
+  background: none;
+  display: inline-block;
+  height: calc(var(--size-base) * 2.625);
+  padding: 0 calc(var(--size-base) * 2.625);
+  font-size: var(--size-base);
+  font-family: var(--font-family);
+  font-style: italic;
+  color: var(--sportsgo-yellow);
+  border: 0.2rem solid var(--sportsgo-yellow);
+  line-height: calc(var(--size-base) * 2.325);
+  -webkit-border-radius: calc(var(--size-base) * .25);
+  border-radius: calc(var(--size-base) * .25);
+  -webkit-transition: all 200ms linear;
+  -moz-transition: all 200ms linear;
+  -ms-transition: all 200ms linear;
+  -o-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+button.secondary:hover,
+a.secondary:hover {
+  border-color: var(--sportsgo-yellow-darken);
+  color: var(--sportsgo-yellow-darken);
+}
+button.secondary:disabled,
+a.secondary:disabled {
+  opacity: 0.5 !important;
+  border-color: var(--sportsgo-disabled);
+}
+button.secondary:disabled:hover,
+a.secondary:disabled:hover {
+  border-color: var(--sportsgo-disabled);
+}
+
+h1, .h1 {
+  font-family: var(--font-family);
+  font-size: calc(var(--size-base) * 2.2 );
+  color: var(--sportsgo-white);
+  margin: var(--size-base) 0;
+  padding-bottom: var(--size-base);
+  position: relative;
+}
+h1:after, .h1:after {
+  content: "";
+  position: absolute;
+  bottom: calc(var(--size-base) * .5);
+  left: 0;
+  width: calc(var(--size-base) * 2);
+  height: 0.3rem;
+  background-color: var(--sportsgo-yellow);
+}
+
+h2, .h2 {
+  font-family: var(--font-family);
+  font-size: calc(var(--size-base) * 2 );
+  color: var(--sportsgo-white);
+  margin: var(--size-base) 0;
+  padding-bottom: var(--size-base);
+  position: relative;
+}
+h2:after, .h2:after {
+  content: "";
+  position: absolute;
+  bottom: calc(var(--size-base) * .5);
+  left: 0;
+  width: calc(var(--size-base) * 2);
+  height: 0.3rem;
+  background-color: var(--sportsgo-yellow);
+}
+
+h3, .h3 {
+  font-family: var(--font-family);
+  font-size: calc(var(--size-base) * 1.8 );
+  color: var(--sportsgo-white);
+  margin: var(--size-base) 0;
+  padding-bottom: var(--size-base);
+  position: relative;
+}
+h3:after, .h3:after {
+  content: "";
+  position: absolute;
+  bottom: calc(var(--size-base) * .5);
+  left: 0;
+  width: calc(var(--size-base) * 2);
+  height: 0.3rem;
+  background-color: var(--sportsgo-yellow);
+}
+
+h4, .h4 {
+  font-family: var(--font-family);
+  font-size: calc(var(--size-base) * 1.6 );
+  color: var(--sportsgo-white);
+  margin: var(--size-base) 0;
+  padding-bottom: var(--size-base);
+  position: relative;
+}
+h4:after, .h4:after {
+  content: "";
+  position: absolute;
+  bottom: calc(var(--size-base) * .5);
+  left: 0;
+  width: calc(var(--size-base) * 2);
+  height: 0.3rem;
+  background-color: var(--sportsgo-yellow);
+}
+
+h5, .h5 {
+  font-family: var(--font-family);
+  font-size: calc(var(--size-base) * 1.4 );
+  color: var(--sportsgo-white);
+  margin: var(--size-base) 0;
+  padding-bottom: var(--size-base);
+  position: relative;
+}
+h5:after, .h5:after {
+  content: "";
+  position: absolute;
+  bottom: calc(var(--size-base) * .5);
+  left: 0;
+  width: calc(var(--size-base) * 2);
+  height: 0.3rem;
+  background-color: var(--sportsgo-yellow);
+}
+
+h6, .h6 {
+  font-family: var(--font-family);
+  font-size: calc(var(--size-base) * 1.2 );
+  color: var(--sportsgo-white);
+  margin: var(--size-base) 0;
+  padding-bottom: var(--size-base);
+  position: relative;
+}
+h6:after, .h6:after {
+  content: "";
+  position: absolute;
+  bottom: calc(var(--size-base) * .5);
+  left: 0;
+  width: calc(var(--size-base) * 2);
+  height: 0.3rem;
+  background-color: var(--sportsgo-yellow);
+}
+
+.card {
+  background-color: var(--sportsgo-white);
+  margin-bottom: var(--size-base);
+}
+.card:hover .card-thumbnail img {
+  -moz-transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
+.card .card-thumbnail {
+  position: relative;
+  padding-top: 56.25%;
+}
+.card .card-thumbnail .card-thumb-img {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.card .card-thumbnail .card-thumb-img img {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  display: block;
+  -webkit-transition: all 200ms linear;
+  -moz-transition: all 200ms linear;
+  -ms-transition: all 200ms linear;
+  -o-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+.card .card-thumbnail .card-thumb-title {
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+.card .card-thumbnail .card-thumb-title > div {
+  color: var(--sportsgo-white);
+  font-size: calc(var(--size-base) * 2.5);
+  font-weight: 800;
+  box-sizing: border-box;
+  padding: calc(var(--size-base) * 2);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.card .card-info {
+  padding: calc(var(--size-base) * 2);
+}
+.card .card-info p {
+  margin: 0 0 var(--size-base) 0;
+}
+.card .card-info p.card-info-date {
+  font-size: calc(var(--size-base) * .75);
+}
+
+.video {
+  position: relative;
+  padding-top: 56.25%;
+}
+.video .live-tag {
+  background: url("../img/live-tag.svg") no-repeat 0 0;
+  width: 4.5rem;
+  height: 3.3rem;
+  position: absolute;
+  z-index: 11;
+  right: -1.2rem;
+  top: var(--size-base);
+  font-size: calc(var(--size-base) * .7);
+  font-weight: 800;
+  box-sizing: border-box;
+  padding-left: 1rem;
+  text-transform: uppercase;
+}
+.video .live-tag span {
+  transform: translateY(-0.2rem);
+  display: block;
+}
+.video .content-video {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.video .content-video:hover .thumbnail img {
+  -moz-transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
+.video .content-video .info-video {
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+.video .content-video .info-video .title {
+  color: var(--sportsgo-white);
+  font-weight: 800;
+  font-size: calc(var(--size-base) * 2.5);
+  margin-bottom: calc(var(--size-base) * 2);
+  line-height: 110%;
+}
+.video .content-video .info-video > div {
+  position: absolute;
+  bottom: calc(var(--size-base) * 2.625);
+  left: calc(var(--size-base) * 2.625);
+  right: calc(var(--size-base) * 2.625);
+}
+.video .content-video .info-video .data-video, .video .content-video .info-video .data-video > li ul, .data-video > li .video .content-video .info-video ul {
+  margin: calc(var(--size-base) * 2) 0 0 0;
+}
+.video .content-video .info-video .data-video li, .data-video > li .video .content-video .info-video ul li {
+  margin: 0;
+}
+.video .content-video .thumbnail {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.video .content-video .thumbnail img {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  display: block;
+  -webkit-transition: all 200ms linear;
+  -moz-transition: all 200ms linear;
+  -ms-transition: all 200ms linear;
+  -o-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+
+.data-video, .data-video > li ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+.data-video > li, .data-video > li ul > li {
+  height: calc(var(--size-base) * 2.625);
+  padding: 0 var(--size-base);
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  -webkit-border-radius: calc(var(--size-base) * .25);
+  border-radius: calc(var(--size-base) * .25);
+  color: var(--sportsgo-white);
+  font-size: calc(var(--size-base) * .875);
+  margin-right: var(--size-base);
+}
+.data-video > li em {
+  width: var(--size-base);
+  height: var(--size-base);
+  margin-right: var(--size-base);
+  line-height: none;
+}
+.data-video > li ul > li, .data-video > li ul > li ul > li {
+  background: none;
+  margin: 0;
+}
+.data-video > li ul > li:first-child, .data-video > li ul > li ul > li:first-child {
+  padding-right: 0;
+}
+.data-video > li.thumbs, .data-video > li ul > li.thumbs {
+  padding: 0;
+}
+
+.sportsgo-wrapper {
+  padding: 0 calc(var(--size-base) * 2.625);
+}
+
+form fieldset {
+  margin: 0 0 calc(var(--size-base) * 2) 0;
+  border: none;
+  padding: 0;
+  position: relative;
+}
+form fieldset label {
+  display: block;
+}
+form fieldset label legend {
+  color: var(--sportsgo-white);
+  display: block;
+  margin: 0 0 calc(var(--size-base) * .4) 0;
+  font-weight: 600;
+}
+form fieldset .form-error {
+  color: var(--sportsgo-error);
+  font-size: calc(var(--size-base) * .875);
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+
+input,
+select,
+textarea {
+  background: none;
+  border: 0.1rem solid rgba(255, 255, 255, 0.4);
+  height: calc(var(--size-base) * 2.625);
+  box-sizing: border-box;
+  padding: calc(var(--size-base) * .5) var(--size-base);
+  -webkit-border-radius: calc(var(--size-base) * .25);
+  border-radius: calc(var(--size-base) * .25);
+  color: var(--sportsgo-white);
+  font-family: var(--font-family);
+  font-size: var(--size-base);
+  width: 100%;
+  appearance: none;
+}
+input::placeholder,
+select::placeholder,
+textarea::placeholder {
+  opacity: 0.5;
+}
+input.error,
+select.error,
+textarea.error {
+  border-color: var(--sportsgo-error);
+}
+input:disabled,
+select:disabled,
+textarea:disabled {
+  opacity: 0.8;
+}
+
+textarea {
+  padding: calc(var(--size-base) * .5) var(--size-base);
+  resize: none;
+  height: auto;
+}
+
+select {
+  background: url("../img/selector.svg") no-repeat calc(100% - var(--size-base)) 50%;
+  background-size: calc(var(--size-base) * .75);
+  cursor: pointer;
+}
+
+.switch {
+  display: inline-block;
+}
+.switch fieldset label {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.switch fieldset label legend {
+  margin: 0;
+}
+.switch fieldset label input {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+.switch fieldset label .slider {
+  position: relative;
+  height: calc(var(--size-base) * 2);
+  width: calc(var(--size-base) * 3);
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: var(--size-base);
+  -webkit-transition: all 200ms linear;
+  -moz-transition: all 200ms linear;
+  -ms-transition: all 200ms linear;
+  -o-transition: all 200ms linear;
+  transition: all 200ms linear;
+  cursor: pointer;
+}
+.switch fieldset label .slider:before {
+  content: "";
+  width: calc(var(--size-base) * 1.5);
+  height: calc(var(--size-base) * 1.5);
+  background: var(--sportsgo-white);
+  border-radius: var(--size-base);
+  display: block;
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.24);
+  animation: slider-off 200ms linear forwards;
+}
+.switch fieldset label input:checked + .slider {
+  background-color: var(--sportsgo-yellow);
+}
+.switch fieldset label input:checked + .slider:before {
+  animation: slider-on 200ms linear forwards;
+}
+
+.special-link {
+  font-weight: 500;
+  opacity: 0.5;
+  -webkit-transition: all 200ms linear;
+  -moz-transition: all 200ms linear;
+  -ms-transition: all 200ms linear;
+  -o-transition: all 200ms linear;
+  transition: all 200ms linear;
+  color: var(--sportsgo-white);
+}
+.special-link:hover {
+  opacity: 1;
+}
+
+footer {
+  margin-top: calc(var(--size-base) * 2);
+  padding: calc(var(--size-base) * 2) calc(var(--size-base) * 2.625);
+  border-top: 0.1rem solid rgba(255, 255, 255, 0.3);
+}
+footer #footer-logo a,
+footer #footer-logo img {
+  display: inline-block;
+}
+footer #footer-logo a {
+  height: calc(var(--size-base) * 2);
+}
+footer #footer-logo a img {
+  height: 100%;
+  width: auto;
+}
+footer nav ul {
+  height: calc(var(--size-base) * 2);
+}
+footer nav ul li a {
+  height: calc(var(--size-base) * 2);
+}
+footer nav ul li.selected a {
+  box-shadow: none;
+}
+
+.message {
+  padding: calc(var(--size-base) * 2);
+  margin: var(--size-base) 0;
+  -webkit-border-radius: calc(var(--size-base) * .25);
+  border-radius: calc(var(--size-base) * .25);
+  border: 0.1rem solid var(--sportsgo-color);
+}
+.message.error {
+  color: var(--sportsgo-error);
+  border-color: var(--sportsgo-error);
+}
+.message.warning {
+  color: var(--sportsgo-warning);
+  border-color: var(--sportsgo-warning);
+}
+.message.success {
+  color: var(--sportsgo-success);
+  border-color: var(--sportsgo-success);
+}
+
+.resp-menu {
+  display: none;
+  position: absolute;
+  z-index: 100;
+  top: calc(var(--size-base) * 4);
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  overflow-y: auto;
+  background-color: var(--sportsgo-deepblue);
+  padding: 0 var(--size-base);
+  -webkit-transition: all 200ms linear;
+  -moz-transition: all 200ms linear;
+  -ms-transition: all 200ms linear;
+  -o-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+.resp-menu.active {
+  bottom: 0;
+}
+.resp-menu nav ul {
+  display: block;
+  height: auto;
+  margin: 0;
+}
+.resp-menu nav ul > li {
+  margin: 0;
+}
+.resp-menu .login-menu ul {
+  display: block;
+}
+.resp-menu .login-menu ul li.search {
+  display: none;
+}
+
+.resp-show {
+  display: none;
+}
+
+.burger {
+  position: absolute;
+  width: calc(var(--size-base) * 2);
+  height: calc(var(--size-base) * 2);
+  right: var(--size-base);
+  top: var(--size-base);
+  cursor: pointer;
+  -webkit-transition: all 200ms linear;
+  -moz-transition: all 200ms linear;
+  -ms-transition: all 200ms linear;
+  -o-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+.burger.active span {
+  height: 0;
+}
+.burger.active:after {
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: 46%;
+}
+.burger.active:before {
+  -moz-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  bottom: 45%;
+}
+.burger span {
+  position: absolute;
+  width: calc(var(--size-base) * 1.5);
+  height: calc(var(--size-base) * .188);
+  left: calc(var(--size-base) * .25);
+  background: var(--sportsgo-yellow);
+  top: calc(50% - (0.188rem / 2));
+}
+.burger:after, .burger:before {
+  content: "";
+  position: absolute;
+  width: calc(var(--size-base) * 1.5);
+  height: calc(var(--size-base) * .188);
+  left: calc(var(--size-base) * .25);
+  background: var(--sportsgo-yellow);
+  -webkit-transition: all 200ms linear;
+  -moz-transition: all 200ms linear;
+  -ms-transition: all 200ms linear;
+  -o-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+.burger:after {
+  top: 25%;
+}
+.burger:before {
+  bottom: 23%;
+}
+
+.display-flex, nav ul li a, .login-menu ul, .login-menu ul li {
+  display: flex;
+}
+
+.align-center, nav ul li a, .login-menu ul, .login-menu ul li, .user-menu {
+  align-items: center;
+}
+
+.justify-end, footer nav ul {
+  justify-content: flex-end;
+}
+
+.margin-top {
+  margin-top: var(--size-base);
+}
+
+.margin-bottom {
+  margin-bottom: var(--size-base);
+}
+
+.height-full-percentage {
+  height: 100%;
+}
+
+.height-full-vh {
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.margin-center {
+  margin: 0 auto;
+}
+
+.width-full {
+  width: 100%;
+}
+
+@media (max-width: 1440px) {
+  .video .content-video .info-video .title {
+    font-size: calc(var(--size-base) * 2);
+    margin-bottom: var(--size-base);
+  }
+
+  .video .content-video .info-video .data-video,
+.video .content-video .info-video .data-video > li ul,
+.data-video > li .video .content-video .info-video ul {
+    margin: var(--size-base) 0 0 0;
+  }
+
+  .data-video, .data-video > li ul {
+    display: block;
+  }
+
+  .data-video > li, .data-video > li ul > li {
+    margin: calc(var(--size-base) * .5) 0;
+    margin-right: calc(var(--size-base) * .5);
+  }
+
+  .data-video > li ul {
+    display: flex;
+  }
+}
+@media (max-width: 1094px) {
+  .card .card-thumbnail .card-thumb-title > div {
+    font-size: calc(var(--size-base) * 1.5);
+  }
+
+  .data-video > li, .data-video > li ul > li {
+    display: inline-flex;
+    order: 1;
+  }
+
+  header .brand a {
+    overflow: hidden;
+    width: 69px;
+  }
+
+  .login-menu ul li {
+    margin-left: var(--size-base);
+  }
+}
+@media (max-width: 920px) {
+  .resp-show {
+    display: block;
+  }
+
+  .resp-none {
+    display: none;
+  }
+
+  .resp-menu {
+    display: block;
+  }
+
+  .sportsgo-wrapper {
+    padding: 0 var(--size-base);
+  }
+
+  .row .col.col-1 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+  }
+  .row .col.col-2 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+  }
+  .row .col.col-3 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+  }
+  .row .col.col-4 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+  }
+  .row .col.col-5 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+  }
+  .row .col.col-6 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+  }
+  .row .col.col-7 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+  }
+  .row .col.col-8 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+  }
+  .row .col.col-9 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+  }
+  .row .col.col-10 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+  }
+  .row .col.col-11 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+  }
+  .row .col.col-12 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+  }
+
+  nav ul li a {
+    padding: 0 var(--size-base);
+    height: calc(var(--size-base) * 3);
+  }
+
+  nav ul li a.active {
+    box-shadow: inset 0.3rem 0 0 0 var(--sportsgo-yellow);
+  }
+
+  footer #footer-logo a {
+    overflow: hidden;
+    width: 69px;
+  }
+}
+@media (max-width: 480px) {
+  .video .content-video .info-video > div {
+    bottom: var(--size-base);
+    left: var(--size-base);
+    right: var(--size-base);
+  }
+
+  .video .content-video .info-video .title {
+    font-size: calc(var(--size-base) * 1.2);
+  }
+
+  .row-grid-live .data-video, .row-grid-live .data-video > li ul, .data-video > li .row-grid-live ul {
+    display: none;
+  }
+}
